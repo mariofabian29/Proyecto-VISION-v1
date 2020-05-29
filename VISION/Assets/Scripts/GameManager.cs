@@ -4,8 +4,16 @@ using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour {
+    /*
+    //AGREGADO POR MI
+    //private string getUrlEscribir = "http://tadeolabhack.com:8081/test/Datos/phpVISION/escribir2.php";
+    private int idVISION = 0;
+    private int Nivel = 0;
+    private int Errores = 0;
+    */
+    //HASTA AQUÍ
 
-	public static GameManager gm;
+    public static GameManager gm;
 
 	[Tooltip("If not set, the player will default to the gameObject tagged as Player.")]
 	public GameObject player;
@@ -47,7 +55,7 @@ public class GameManager : MonoBehaviour {
 		Collect (0);
 
 		// make other UI inactive
-		gameOverCanvas.SetActive (false);
+		//gameOverCanvas.SetActive (false);
 		if (canBeatLevel)
 			beatLevelCanvas.SetActive (false);
 	}
@@ -112,4 +120,31 @@ public class GameManager : MonoBehaviour {
 		}
 
 	}
+    /*
+    //AGREGADO POR MI
+    public void obtenerInfo()
+    {
+        StartCoroutine(sendItem());
+    }
+
+    public IEnumerator sendItem()
+    {
+
+        print(idVISION + " " + Nivel + " " + Errores);
+
+        WWWForm form = new WWWForm();
+
+        form.AddField("id", idVISION);
+        form.AddField("niv", Nivel);
+        form.AddField("err", score);
+
+        WWW retroalimentacion = new WWW(UrlPosition, form);
+
+        yield return retroalimentacion;
+
+        print(retroalimentacion.text);
+        //HASTA AQUÍ
+    }
+    */
+
 }
